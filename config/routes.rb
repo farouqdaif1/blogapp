@@ -4,6 +4,6 @@ root 'users#index'
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users, only: [:show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show,:new,:create]
   end
 end
