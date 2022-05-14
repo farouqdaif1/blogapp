@@ -1,0 +1,11 @@
+<%= form_with(model: @new_post, url: user_posts_path(current_user), local: true) do |form| %>
+  <div class="mb-3">
+      <%= form.label :title ,class: "form-label" %>
+      <%= form.text_field :title ,class: "form-control" %>
+   </div>
+   <div class="mb-3">
+      <%= form.label :text ,class: "form-label" %>
+      <%= form.text_area :text ,class: "form-control text-area" %>
+     </div>
+    <%= form.submit "Add new post" ,class: "btn btn-outline-dark" %>
+<% end %>
