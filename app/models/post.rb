@@ -1,9 +1,12 @@
 class Post < ApplicationRecord
+  include ApplicationHelper
+
   belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :likes
+
   def update_posts_counter
-    user.increment!(:post_counter)
+    current_user.increment!(:post_counter)
   end
 
   def recent_comments
