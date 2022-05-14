@@ -10,8 +10,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+    <% flash.each do |name, msg| -%>
+      <div class="alert alert-success" role="alert">
+        <%= msg %>
+      </div>
+    <% end -%>
+    <div class="container" style="padding-bottom:50px"> 
+       <%= yield %>
+    </div>
+    </html>
